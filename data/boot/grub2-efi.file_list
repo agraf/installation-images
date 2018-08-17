@@ -25,6 +25,13 @@ elsif arch eq 'aarch64'
       a /usr/lib64/efi/MokManager.efi EFI/BOOT/
   endif
 
+  # Add RPi packages if available
+  if exists(raspberrypi-firmware)
+      raspberrypi-firmware-dt:
+      u-boot-rpi3:
+      a /boot/vc/* .
+  endif
+
   x grub-aarch64.cfg EFI/BOOT/grub.cfg
 endif
 

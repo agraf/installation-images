@@ -107,6 +107,10 @@ terminfo-base:
 udev:
 util-linux:
 
+if arch eq 'aarch64'
+raspberrypi-firmware:
+endif
+
 <release_theme>-release: nodeps
 
 ca-certificates:
